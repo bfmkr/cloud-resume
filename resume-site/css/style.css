@@ -1,0 +1,81 @@
+@font-face {
+  font-family: "My CMU Serif";
+  src: url("cmunrm.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "My CMU Serif";
+  src: url("cmunti.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "My CMU Serif";
+  src: url("cmunbx.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "My CMU Serif";
+  src: url("cmunbi.otf") format("opentype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+* {
+    font-family: "Helvetica Neue", "My CMU Serif", sans-serif;
+    box-sizing:  border-box;
+    font-size: 14px;
+}
+
+body {
+    color: #333;
+    line-height:  1.7;
+    margin: 0;
+}
+
+img {
+    height:  auto;
+    max-width: 100%;
+}
+
+.resume_container {
+    display: flex;
+}
+
+.resume_left {
+    background-color: #90a4ae;
+    padding: 10px;
+    border: 0px;
+    flex: 1;
+}
+
+.resume_right {
+    background-color: white;
+    padding: 10px;
+    border: 0px;
+    flex: 3;
+}
+
+.footer {
+  text-align:center;
+  font-size: 12px;
+  background-color:lightblue;
+}
+
+@media only screen and (max-width: 720px) {
+  /* For mobile phones: */
+  .resume_container {
+    flex-direction: column;
+  }
+  * {
+    font-size: 12px;
+  }
+  .pic-of-me {
+    width: 100%;
+  }

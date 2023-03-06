@@ -1,3 +1,6 @@
+.DS_Store
+resume-site/css/.DS_Store
+
 .aws-sam/*
 
 # Created by https://www.gitignore.io/api/osx,linux,python,windows,pycharm,visualstudiocode
