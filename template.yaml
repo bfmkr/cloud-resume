@@ -15,6 +15,9 @@ Resources:
   CloudResumeWebsite:
     Type: AWS::S3::Bucket
     Properties:
+      AccessControl: PublicRead
+      WebsiteConfiguration:
+        IndexDocument: index.html
       BucketName: bmkrresume
 
   HelloWorldFunction:
