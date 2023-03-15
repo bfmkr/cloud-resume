@@ -20,6 +20,26 @@ Resources:
         IndexDocument: index.html
       BucketName: bmkrresume
 
+  MyDistribution:
+    Type: "AWS::CloudFront::Distribution"
+    Properties:
+      DistributionConfig:
+        DefaultCacheBehavior:
+          ViewerProtocolPolicy: allow-all
+          TargetOriginId: bmkrresume.s3-website-ap-southeast-2.amazonaws.com
+          DefaultTTL: 0
+          MinTTL: 0
+          MaxTTL: 0
+          ForwardedValues:
+            QueryString: false
+        Origins:
+          - DomainName: bmkrresume.s3-website-ap-southeast-2.amazonaws.com
+            Id: bmkrresume.s3-website-ap-southeast-2.amazonaws.com
+            CustomOriginConfig:
+              OriginProtocolPolicy: http-only
+        Enabled: "true"
+        DefaultRootObject: index.html
+
   BucketPolicy:
     Type: AWS::S3::BucketPolicy
     Properties:
