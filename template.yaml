@@ -24,6 +24,11 @@ Resources:
     Type: "AWS::CloudFront::Distribution"
     Properties:
       DistributionConfig:
+        ViewerCertificate:
+          AcmCertificateArn: "arn:aws:acm:us-east-1:413604402956:certificate/77cdbb34-b320-47b6-b64c-1a45609314de"
+          SslSupportMethod: sni-only
+        Aliases:
+          - bmkrresume.com
         DefaultCacheBehavior:
           ViewerProtocolPolicy: allow-all
           TargetOriginId: bmkrresume.s3-website-ap-southeast-2.amazonaws.com
@@ -39,17 +44,6 @@ Resources:
               OriginProtocolPolicy: http-only
         Enabled: "true"
         DefaultRootObject: index.html
-
-  MyRoute53Record:
-    Type: "AWS::Route53::RecordSetGroup"
-    Properties:
-      HostedZoneId: Z05484792CDK1FNOK0SGU
-      RecordSets:
-        - Name: website.bmkrresume.com
-          Type: A
-          AliasTarget:
-            HostedZoneId: Z2FDTNDATAQYW2
-            DNSName: !GetAtt MyDistribution.DomainName
 
   BucketPolicy:
     Type: AWS::S3::BucketPolicy
