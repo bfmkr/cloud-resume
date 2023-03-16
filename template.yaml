@@ -40,6 +40,17 @@ Resources:
         Enabled: "true"
         DefaultRootObject: index.html
 
+  MyRoute53Record:
+    Type: "AWS::Route53::RecordSetGroup"
+    Properties:
+      HostedZoneId: Z05484792CDK1FNOK0SGU
+      RecordSets:
+        - Name: website.bmkrresume.com
+          Type: A
+          AliasTarget:
+            HostedZoneId: Z2FDTNDATAQYW2
+            DNSName: !GetAtt MyDistribution.DomainName
+
   BucketPolicy:
     Type: AWS::S3::BucketPolicy
     Properties:
