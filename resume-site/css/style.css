@@ -27,8 +27,39 @@
 }
 
 
+@font-face {
+  font-family: "My CMU Sans Serif";
+  src: url("cmunss.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "My CMU Sans Serif";
+  src: url("cmunsi.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "My CMU Sans Serif";
+  src: url("cmunsx.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "My CMU Sans Serif";
+  src: url("cmunso.otf") format("opentype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+
 * {
-    font-family: "Helvetica Neue", "My CMU Serif", sans-serif;
+    font-family: "Helvetica Neue", "My CMU Sans Serif", sans-serif;
     box-sizing:  border-box;
     font-size: 14px;
 }
@@ -63,6 +94,7 @@ img {
 }
 
 .footer {
+/*  font-family: "My CMU Sans Serif";*/
   text-align:center;
   font-size: 12px;
   background-color:lightblue;
@@ -79,3 +111,4 @@ img {
   .pic-of-me {
     width: 100%;
   }
+}
