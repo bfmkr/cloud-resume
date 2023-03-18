@@ -21,11 +21,29 @@
         <p>UK citizen</p>
         <p> bfmckeever@gmail.com </p>
 
-        <strong> VISITOR STATS</strong>
+        <div class="timebox">
+          <i>Time in Sydney:</i>
+          <span id="sydneytime"></span>
+        </div>
+
+        <script>
+          var getSydneyTime = function(){
+            document.getElementById("sydneytime").innerHTML =
+              new Date().toLocaleString(
+                "en-US",
+                {timeZone:'Australia/Sydney',timeStyle:'long',hourCycle:'h12'}
+                );
+          }
+          getSydneyTime();
+          setInterval(getSydneyTime,1000);
+        </script>
+
+        <p><strong> DYNAMIC VISITOR COUNTER: </strong></p>
+        <p>You are visitor number</p>
+
       </div>
 
       <div class="resume_right">
-
         <h1> ABOUT </h1>
         <p>
         After 4 years of working in academia in Germany, I am transitioning into Data Science and Cloud Computing using AWS. I moved to Australia in April 2022 on a working holiday visa, completed 5 months of regional farmwork in Coomealla NSW and Cottonvale QLD, and have since moved to Sydney and am working on cloud certifications and improving my data science skills.
@@ -39,8 +57,6 @@
            </a>
         </div>
 
-  <!--       <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="e8c50b9d-2c35-49f4-a9de-b59c9a0b4543" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
-   -->
         <h1> WORK EXPERIENCE </h1>
 
         <ul>
@@ -52,7 +68,6 @@
           <p> <b>Institut für Physik, Johannes Gutenberg-Universität Mainz, Germany </b></p>
           <p><em>Physics PhD candidate </em> </p>
           <p>“Skyrmion physics in topological materials.” My PhD research concerned theoretical modelling of novel magnetic objects (skyrmions) in nansocale devices by use of micromagnetic simulations. <a href="https://orcid.org/0000-0002-3361-6480">Publications</a>.
-            <!-- This involved near-daily use of the Python scientific stack for investigating data and writing simulation scripts, usually computed with backend code written in CUDA/C++ on NVIDIA gpu hardware. For rapidly investigating data, Jupyter notebooks were deployed, git was used for version control of simulation scripts and the underlying micromagnetic simulation solvers, and Wolfram Mathematica was used for symbolic computations. Computational tasks were typically performed via tmux servers on remote workstations via SSH. -->
           </p>
         </ul>
 
