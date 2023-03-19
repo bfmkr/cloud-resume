@@ -29,6 +29,7 @@ Resources:
           SslSupportMethod: sni-only
         Aliases:
           - bmkrresume.com
+          - www.bmkrresume.com
         DefaultCacheBehavior:
           ViewerProtocolPolicy: allow-all
           TargetOriginId: bmkrresume.s3-website-ap-southeast-2.amazonaws.com
