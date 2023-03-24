@@ -19,7 +19,10 @@
 
         <p><strong> BENJAMIN F MCKEEVER</strong></p>
         <p>UK Citizen</p>
-        <p> <strong>CONTACT ME:</strong> <a href="mailto:ben@bmkrresume.com">ben@bmkrresume.com</a> </p>
+        <p>
+          <strong>CONTACT:</strong>
+          <a href="mailto:ben@bmkrresume.com">ben@bmkrresume.com</a>
+        </p>
 
         <div class="timebox">
           <i>Time in Sydney:</i>
@@ -27,20 +30,19 @@
         </div>
 
         <script>
-          var getSydneyTime = function(){
+          var getSydneyTime = function() {
             document.getElementById("sydneytime").innerHTML =
-              new Date().toLocaleString(
-                "en-US",
-                {timeZone:'Australia/Sydney',timeStyle:'long',hourCycle:'h12'}
-                );
-          }
+              new Date().toLocaleString("en-US",
+                {timeZone: 'Australia/Sydney', timeStyle: 'long', hourCycle: 'h12'});
+          };
           getSydneyTime();
-          setInterval(getSydneyTime,1000);
+          setInterval(getSydneyTime, 1000);
         </script>
 
-        <p><strong> DYNAMIC VISITOR COUNTER: </strong></p>
+        <p><strong> VISITOR COUNTER: </strong></p>
         <p>You are visitor number</p>
 
+        <p><strong> GITHUB </strong></p>
       </div>
 
       <div class="resume_right">
