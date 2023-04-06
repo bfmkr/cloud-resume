@@ -31,7 +31,7 @@
 
         <script>
           var getSydneyTime = function() {
-            document.getElementById("sydneytime").innerHTML =
+            document.getElementById("sydneytime").innerText =
               new Date().toLocaleString("en-US",
                 {timeZone: 'Australia/Sydney', timeStyle: 'long', hourCycle: 'h12'});
           };
