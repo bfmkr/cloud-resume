@@ -43,3 +43,15 @@ def get_function(event, context):
         "body": json.dumps({"count": "2"}),
     }
 
+
+def put_function(event, context):
+
+    return {
+        "statusCode": 200,
+        "headers": {
+            "Access-Control-Allow-Methods": "*",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "*",
+        },
+        "body": json.dumps({"count": "2"}),
+    }
