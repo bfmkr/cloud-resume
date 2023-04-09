@@ -20,6 +20,18 @@ Resources:
         IndexDocument: index.html
       BucketName: bmkrresume
 
+  DynamoDBTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+        TableName: cloud-resume-challenge
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+            - AttributeName: "ID"
+              AttributeType: "S"
+        KeySchema:
+            - AttributeName: "ID"
+              KeyType: "HASH"
+
   MyDistribution:
     Type: "AWS::CloudFront::Distribution"
     Properties:
