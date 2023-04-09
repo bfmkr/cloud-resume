@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="./css/style.css">
 
     <title>bmkrresume</title>
+    <!-- <script src="js/visitors.js" defer></script> -->
+    <script>
+      fetch('https://yz8xehlav7.execute-api.ap-southeast-2.amazonaws.com/Prod/hello')
+        .then(res => res.json())
+        .then((data) => {
+            document.getElementById('counter').innerText = data.count
+    })
+    </script>
   </head>
   <body>
 
@@ -40,7 +48,7 @@
         </script>
 
         <p><strong> VISITOR COUNTER: </strong></p>
-        <p>You are visitor number</p>
+        <p>You are visitor number <span id="counter"></span></p>
 
         <p><strong> GITHUB </strong></p>
       </div>
