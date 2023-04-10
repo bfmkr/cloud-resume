@@ -9,7 +9,7 @@
     <title>bmkrresume</title>
     <!-- <script src="js/visitors.js" defer></script> -->
     <script>
-      fetch('https://yz8xehlav7.execute-api.ap-southeast-2.amazonaws.com/Prod/hello')
+      fetch('https://yz8xehlav7.execute-api.ap-southeast-2.amazonaws.com/Prod/get')
         .then(res => res.json())
         .then((data) => {
             document.getElementById('counter').innerText = data.count
