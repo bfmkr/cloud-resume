@@ -95,6 +95,9 @@ Resources:
   PutFunction:
     Type: AWS::Serverless::Function
     Properties:
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: cloud-resume-challenge
       CodeUri: put-function/
       Handler: app.put_function
       Runtime: python3.9
@@ -106,17 +109,3 @@ Resources:
           Properties:
             Path: /put
             Method: GET
-
-Outputs:
-  # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
-  # Find out more about other implicit resources you can reference within SAM
-  # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
-  GetApi:
-    Description: "API Gateway endpoint URL for Prod stage for Get function"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/get/"
-  GetFunction:
-    Description: "Get Lambda Function ARN"
-    Value: !GetAtt GetFunction.Arn
-  GetFunctionIamRole:
-    Description: "Implicit IAM Role created for Get function"
-    Value: !GetAtt GetFunctionRole.Arn
