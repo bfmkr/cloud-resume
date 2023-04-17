@@ -12,7 +12,7 @@
         .then(() => fetch('https://yz8xehlav7.execute-api.ap-southeast-2.amazonaws.com/Prod/get'))
         .then(res => res.json())
         .then((data) => {
-            document.getElementById('counter').innerText = data.count
+            document.getElementById('visits').innerText = data.count
     })
     </script>
   </head>
