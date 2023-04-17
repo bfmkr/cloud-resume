@@ -9,10 +9,11 @@
     <title>bmkrresume</title>
     <script>
       fetch('https://yz8xehlav7.execute-api.ap-southeast-2.amazonaws.com/Prod/put')
-        .then(() => fetch('https://yz8xehlav7.execute-api.ap-southeast-2.amazonaws.com/Prod/get'))
+        .then(() =>
+          fetch('https://yz8xehlav7.execute-api.ap-southeast-2.amazonaws.com/Prod/get'))
         .then(res => res.json())
         .then((data) => {
-            document.getElementById('counter').innerText = data.visit
+            document.getElementById('counter').innerText = data.visits
     })
     </script>
   </head>
@@ -58,7 +59,6 @@
         <p>
         After 4 years of working in academia in Germany, I am transitioning into Data Science and Cloud Computing using AWS. I moved to Australia in April 2022 on a working holiday visa, completed 5 months of regional farmwork in Coomealla NSW and Cottonvale QLD, and have since moved to Sydney and am working on cloud certifications and improving my data science skills.
         </p>
-    <!--     \[ \sum_{i=0}^{N}i = \frac{N(N+1)}{2}  \] -->
 
          <div>
            <a href="https://www.credly.com/badges/e8c50b9d-2c35-49f4-a9de-b59c9a0b4543/public_url" title="AWS Certified Cloud Practitioner (click to verify)">

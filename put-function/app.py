@@ -13,7 +13,6 @@ def put_function(event, context):
         ExpressionAttributeValues = {':val': 1},
         ReturnValues = 'UPDATED_NEW'
         )
-    print(response['Attributes'])
 
     return {
         "statusCode": 200,

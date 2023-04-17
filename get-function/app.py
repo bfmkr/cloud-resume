@@ -18,6 +18,6 @@ def get_function(event, context):
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Headers": "*",
         },
-        "body": json.dumps({"visits": visits }),
+        "body": json.dumps({"visits": visits}),
     }
 
