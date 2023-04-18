@@ -83,7 +83,7 @@ Resources:
       Policies:
         - DynamoDBCrudPolicy:
             TableName: cloud-resume-challenge
-      CodeUri: get-function/
+      CodeUri: get_function/
       Handler: app.get_function
       Runtime: python3.9
       Architectures:
@@ -101,7 +101,7 @@ Resources:
       Policies:
         - DynamoDBCrudPolicy:
             TableName: cloud-resume-challenge
-      CodeUri: put-function/
+      CodeUri: put_function/
       Handler: app.put_function
       Runtime: python3.9
       Architectures:
