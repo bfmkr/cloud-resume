@@ -7,16 +7,25 @@ table = db.Table(table_name)
 
 
 def get_function(event, context):
-    """
-    Retrieve hit count from DynamoDB table
+    """Lambda function
 
     Parameters
     ----------
+    event: dict, required
+        API Gateway Lambda Proxy Input Format
 
-    event: dict
-        API GW event
-    context: string
-        Not sure!
+        Event doc: https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html#api-gateway-simple-proxy-for-lambda-input-format
+
+    context: object, required
+        Lambda Context runtime methods and attributes
+
+        Context doc: https://docs.aws.amazon.com/lambda/latest/dg/python-context-object.html
+
+    Returns
+    ------
+    API Gateway Lambda Proxy Output Format: dict
+
+        Return doc: https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html
     """
 
     response = table.get_item(Key = {"ID": "visitors"})
