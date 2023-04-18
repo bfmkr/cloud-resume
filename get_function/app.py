@@ -7,6 +7,17 @@ table = db.Table(table_name)
 
 
 def get_function(event, context):
+    """
+    Retrieve hit count from DynamoDB table
+
+    Parameters
+    ----------
+
+    event: dict
+        API GW event
+    context: string
+        Not sure!
+    """
 
     response = table.get_item(Key = {"ID": "visitors"})
     visits = int(response["Item"]['visits'])
