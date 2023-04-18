@@ -1,8 +1,6 @@
 import json
-
 import pytest
-
-from hello_world import app
+from get_function import app
 
 
 @pytest.fixture()
@@ -62,11 +60,11 @@ def apigw_event():
     }
 
 
-def test_lambda_handler(apigw_event):
+def test_get_function(apigw_event):
 
-    ret = app.lambda_handler(apigw_event, "")
+    ret = app.get_function(apigw_event, "")
     data = json.loads(ret["body"])
 
     assert ret["statusCode"] == 200
-    assert "message" in ret["body"]
-    assert data["message"] == "hello world"
+    assert isinstance(data["visits"], int)
+
