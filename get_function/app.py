@@ -1,9 +1,12 @@
 import json
 import boto3
 
-db = boto3.resource('dynamodb')
-table_name = 'cloud-resume-challenge'
-table = db.Table(table_name)
+
+def get_DynamoDB_data():
+
+    db = boto3.resource('dynamodb')
+    table_name = 'cloud-resume-challenge'
+    return db.Table(table_name)
 
 
 def get_function(event, context):
@@ -28,6 +31,7 @@ def get_function(event, context):
         Return doc: https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html
     """
 
+    table = get_DynamoDB_data()
     response = table.get_item(Key = {"ID": "visitors"})
     visits = int(response["Item"]['visits'])
 
