@@ -1,6 +1,5 @@
 credentials
-.DS_Store
-resume-site/css/.DS_Store
+SAM-README.md
 
 .aws-sam/*
 
