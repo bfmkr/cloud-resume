@@ -1,4 +1,5 @@
 import json
+import decimal
 import pytest
 from get_function import app
 
@@ -68,3 +69,10 @@ def test_get_function(apigw_event):
     assert ret["statusCode"] == 200
     assert isinstance(data["visits"], int)
 
+
+def test_get_DynamoDB_data():
+
+    table = app.get_DynamoDB_data()
+    response = table.get_item(Key = {"ID": "visitors"})
+    assert isinstance(response["Item"]["visits"], decimal.Decimal)
+    assert response["ResponseMetadata"]["HTTPStatusCode"] == 200
