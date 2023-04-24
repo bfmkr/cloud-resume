@@ -2,8 +2,15 @@ name: main
 
 on: [push]
 
+env:
+  AWS_REGION : "ap-southeast-2"
+
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
-  build-infra:
+  test-infra:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -11,6 +18,12 @@ jobs:
     timeout-minutes: 2
     steps:
       - uses: actions/checkout@v3
+      - name: configure aws credentials
+          uses: aws-actions/configure-aws-credentials@v1.7.0
+          with:
+            role-to-assume: arn:aws:iam::413604402956:role/GitHubAction-AssumeRoleWithAction
+            role-session-name: GitHub_to_AWS_via_FederatedOIDC
+            aws-region: ${{ env.AWS_REGION }}
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v3
         with:
@@ -21,5 +34,16 @@ jobs:
           python -m pip install pytest
           python -m pip install boto3
           if [-f requirements.txt]; then pip install -r requirements.txt; fi
-      - name: test get_function
+      - name: run tests with pytest
         run: cd tests/unit/ && python -m pytest test_handler.py
+
+  # build-and-deploy-infra:
+  #   needs: test-infra
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - uses: actions/setup-python@v3
+  #     - uses: aws-actions/setup-sam@v2
+  #       with:
+  #         use-installer: true
+  #     - uses:
