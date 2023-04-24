@@ -3,7 +3,7 @@ name: main
 on: [push]
 
 env:
-  AWS_REGION : "ap-southeast-2"
+  AWS_REGION: "ap-southeast-2"
 
 permissions:
   id-token: write
@@ -18,7 +18,7 @@ jobs:
     timeout-minutes: 2
     steps:
       - uses: actions/checkout@v3
-      - name: configure aws credentials
+      - name: Configure aws credentials
         uses: aws-actions/configure-aws-credentials@v1.7.0
         with:
           role-to-assume: arn:aws:iam::413604402956:role/GitHubAction-AssumeRoleWithAction
@@ -34,7 +34,7 @@ jobs:
           python -m pip install pytest
           python -m pip install boto3
           if [-f requirements.txt]; then pip install -r requirements.txt; fi
-      - name: run tests with pytest
+      - name: Run tests with pytest
         run: cd tests/unit/ && python -m pytest test_handler.py
 
   # build-and-deploy-infra:
