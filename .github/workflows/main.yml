@@ -19,11 +19,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: configure aws credentials
-          uses: aws-actions/configure-aws-credentials@v1.7.0
-          with:
-            role-to-assume: arn:aws:iam::413604402956:role/GitHubAction-AssumeRoleWithAction
-            role-session-name: GitHub_to_AWS_via_FederatedOIDC
-            aws-region: ${{ env.AWS_REGION }}
+        uses: aws-actions/configure-aws-credentials@v1.7.0
+        with:
+          role-to-assume: arn:aws:iam::413604402956:role/GitHubAction-AssumeRoleWithAction
+          role-session-name: GitHub_to_AWS_via_FederatedOIDC
+          aws-region: ${{ env.AWS_REGION }}
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v3
         with:
