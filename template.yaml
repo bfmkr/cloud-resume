@@ -12,6 +12,7 @@ Globals:
     MemorySize: 128
 
 Resources:
+
   CloudResumeWebsite:
     Type: AWS::S3::Bucket
     Properties:
@@ -75,7 +76,6 @@ Resources:
                 - !Ref CloudResumeWebsite
                 - /*
       Bucket: !Ref CloudResumeWebsite
-
 
   GetFunction:
     Type: AWS::Serverless::Function
