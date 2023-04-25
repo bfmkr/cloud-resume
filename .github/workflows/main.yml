@@ -48,7 +48,7 @@ jobs:
       - name: Configure aws credentials
         uses: aws-actions/configure-aws-credentials@v1.7.0
         with:
-          role-to-assume: ${{ secrets.ROLE_TO_ASSUME }}
+          role-to-assume: ${{ secrets.ROLE_TO_ASSUME }} # test
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: ${{ env.AWS_REGION }}
       - uses: actions/setup-python@v3
