@@ -48,7 +48,7 @@ jobs:
       - name: Configure aws credentials
         uses: aws-actions/configure-aws-credentials@v1.7.0
         with:
-          role-to-assume: ${{ secrets.ROLE_TO_ASSUME }} # test
+          role-to-assume: ${{ secrets.ROLE_TO_ASSUME }}
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: ${{ env.AWS_REGION }}
       - uses: actions/setup-python@v3
@@ -61,3 +61,20 @@ jobs:
         run: sam build
       - name: SAM deploy
         run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset
+
+  deploy-site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v1.7.0
+        with:
+          role-to-assume: ${{ secrets.ROLE_TO_ASSUME }}
+          role-session-name: GitHub_to_AWS_via_FederatedOIDC
+          aws-region: ${{ env.AWS_REGION }}
+      - uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --delete
+        env:
+          AWS_S3_BUCKET: bmkrresume
+          SOURCE_DIR: resume-site
