@@ -72,9 +72,6 @@ jobs:
           role-to-assume: ${{ secrets.ROLE_TO_ASSUME }}
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: ${{ env.AWS_REGION }}
-      - uses: jakejarvis/s3-sync-action@master
-        with:
-          args: --delete
-        env:
-          AWS_S3_BUCKET: bmkrresume
-          SOURCE_DIR: resume-site
+      - name: Copy files to the static site with the AWS CLI
+        run: |
+         aws s3 sync ./resume-site s3://bmkrresume
