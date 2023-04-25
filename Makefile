@@ -1,4 +1,7 @@
+SHELL:=/bin/bash
+
 .PHONY: build
+.SILENT: integration-test
 
 build:
 	sam build
@@ -15,5 +18,12 @@ invoke-get:
 invoke-put:
 	sam build && aws-vault exec aws-sso-dev --no-session -- sam local invoke PutFunction
 
-run-test:
+run-unit-tests:
 	aws-vault exec aws-sso-dev --no-session -- python -m pytest tests/unit/test_handler.py
+
+integration-test:
+	FIRST=$$(curl -s "https://yz8xehlav7.execute-api.ap-southeast-2.amazonaws.com/Prod/get" | jq ".visits| tonumber");\
+	curl -s "https://yz8xehlav7.execute-api.ap-southeast-2.amazonaws.com/Prod/put";\
+	SECOND=$$(curl -s "https://yz8xehlav7.execute-api.ap-southeast-2.amazonaws.com/Prod/get" | jq ".visits| tonumber");\
+	echo "Comparing if first count ($$FIRST) is less than (<) second count ($$SECOND)"; \
+	if [[ $$FIRST -le $$SECOND ]]; then echo "PASS"; else echo "FAIL";  fi
