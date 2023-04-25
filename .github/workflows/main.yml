@@ -37,13 +37,16 @@ jobs:
       - name: Run tests with pytest
         run: cd tests/unit/ && python -m pytest test_handler.py
 
-  # build-and-deploy-infra:
-  #   needs: test-infra
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - uses: actions/setup-python@v3
-  #     - uses: aws-actions/setup-sam@v2
-  #       with:
-  #         use-installer: true
-  #     - uses:
+  build-and-deploy-infra:
+    needs: test-infra
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+      - uses: aws-actions/setup-sam@v2
+        with:
+          use-installer: true
+      - name: SAM build
+        run: sam build
+      - name: SAM deploy
+        run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset
