@@ -18,8 +18,10 @@ The following services and technologies were used in this project.
 * **Amazon DynamoDB**: for the database storing information for the website's visitor counter.
 * **AWS Lambda**: for event management within the serverless API.
 * **AWS SDK for Python (Boto3)**: for the backend Lambda functions and testing.
+* **Docker**: for local invocations of Lambda functions.
 * **GitHub/git**: for source control.
 * **GitHub Actions**: for automated deploying to AWS in a CI/CD pipeline.
 * **HTML/CSS/JavaScript**: for the static website functionality.
+
 
 It may be of interest to read about [things I would do if I had more time](notes/If%20I%20had%20more%20time.md), or [parts I found challenging along the way](notes/Challenging%20parts.md).
