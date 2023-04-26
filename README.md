@@ -21,4 +21,4 @@ The following services and technologies were used in this project.
 * **GitHub Actions**: for automated deploying to AWS in a CI/CD pipeline.
 * **HTML/CSS/JavaScript**: for the static website functionality.
 
-It may be of interest to read about [things I would do if I had more time](notes/If%20I%20had more%20time.md), or [parts I found challenging along the way](notes/Challenging%20parts.md).
+It may be of interest to read about [things I would do if I had more time](notes/If20I%20had%20more%20time.md), or [parts I found challenging along the way](notes/Challenging%20parts.md).
