@@ -6,10 +6,11 @@ I embarked on this project to shore up the knowledge gained from studying for th
 
 The following services and technologies were used in this project.
 
-* **Amazon S3**: for static website hosting
-* **Amazon Cloudfront**: for content delivery from the S3 bucket with HTTPS
-* **Amazon Route 53**: for DNS
-* **AWS Certificate Manager**: for the HTTPS certificate
+* **AWS Organizations and IAM Identity Center**: for account management.
+* **Amazon S3**: for static website hosting.
+* **Amazon Cloudfront**: for content delivery from the S3 bucket with HTTPS.
+* **Amazon Route 53**: for DNS.
+* **AWS Certificate Manager**: for the HTTPS certificate.
 * **Cloudflare**: for registering my domain name and setting up custom email routing.
 * **AWS CloudFormation**: for Infrastructure as Code.
 * **AWS SAM**: For building the serverless application.
@@ -17,7 +18,7 @@ The following services and technologies were used in this project.
 * **Amazon DynamoDB**: for the database storing information for the website's visitor counter.
 * **AWS Lambda**: for event management within the serverless API.
 * **AWS SDK for Python (Boto3)**: for the backend Lambda functions and testing.
-* **GitHub/git**: for source control
+* **GitHub/git**: for source control.
 * **GitHub Actions**: for automated deploying to AWS in a CI/CD pipeline.
 * **HTML/CSS/JavaScript**: for the static website functionality.
 
