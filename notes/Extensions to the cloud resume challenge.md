@@ -13,7 +13,7 @@ Below are a few extensions I made to the original cloud resume challenge.
   I simply clicked a checkbox on Cloudflare to set this up.
 
 * To enable *sending* emails from `ben@bmkrresume.com` I had to configure this as an alias in gmail.
-  I also needed to add the appropriate spf and dmarc TXT records in CloudFlare to ensure they wouldn't be considered as spam by recipients.
+  I also needed to add the appropriate spf and dmarc TXT records in Cloudflare to ensure they wouldn't be considered as spam by recipients.
   In gmail:
 
     ```
