@@ -19,7 +19,7 @@ invoke-put:
 	sam build && aws-vault exec aws-sso-dev --no-session -- sam local invoke PutFunction
 
 run-unit-tests:
-	aws-vault exec aws-sso-dev --no-session -- python -m pytest tests/unit/test_handler.py
+	aws-vault exec aws-sso-dev --no-session -- python3.9 -m pytest tests/unit/test_handler.py
 
 integration-test:
 	FIRST=$$(curl -s "https://yz8xehlav7.execute-api.ap-southeast-2.amazonaws.com/Prod/get" | jq ".visits| tonumber");\
